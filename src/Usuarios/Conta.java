@@ -7,6 +7,7 @@ public class Conta {
     private String login;
     private String senha;
 
+
     public void cadastrarLogin(){
         System.out.printf("\nDigite seu login: ");
         login = ler.next();

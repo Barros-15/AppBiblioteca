@@ -1,13 +1,19 @@
 package Biblioteca;
 
+import java.util.Scanner;
+
 public class Livro {
     private String livro;
     private String autor;
     private boolean diponivel;
-    public Livro(String livro, String autor, boolean diponivel) {
-        this.livro = livro;
-        this.autor = autor;
-        this.diponivel = diponivel;
+
+    public void cadastraLivro() {
+        System.out.printf("Digite o nome do livro: ");
+        this.livro = new Scanner(System.in).next();
+        System.out.printf("Digite a autor do livro: ");
+        this.autor = new Scanner(System.in).next();
+        emprestarLivro();
+        devolverLivro();
     }
     public void emprestarLivro(){
         if (diponivel == true){
@@ -17,6 +23,7 @@ public class Livro {
     public void devolverLivro(){
         if (diponivel == true){}
     }
+
     public void mostrarLivro(){
         System.out.printf("\nLivro: \n" + livro +
                 " de: " + autor);
