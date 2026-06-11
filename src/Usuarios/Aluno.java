@@ -26,4 +26,10 @@ public class Aluno  extends Pessoa{
     public void setConta(Conta conta) {
         this.conta = conta;
     }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+
 }

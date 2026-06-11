@@ -1,28 +1,12 @@
 package Biblioteca;
 
-import Usuarios.Pessoa;
-
 import java.util.Scanner;
 
-public class Livro {
+public  class EmprestarLivro {
     Scanner ler = new Scanner(System.in);
-    private String livro;
-    private String autor;
-    private boolean disponivel;
     private String opcao;
-
-
-
-    public void cadastraLivro() {
-        System.out.printf("\nDigite o nome do livro: ");
-        this.livro = new Scanner(System.in).next();
-        System.out.printf("\nDigite a autor do livro: ");
-        this.autor = new Scanner(System.in).next();
-        System.out.printf("\nDisponivel para emprestar");
-        disponivel = true;
-    }
-
-    public void emprestarLivro(Pessoa pessoaLogado){
+    private boolean disponivel;
+    public void emprestarLivro(){
         if(this.disponivel == true){
             System.out.printf("\nLivro disponivel!");
             System.out.printf("\nDeseja emprestar ? ");
@@ -41,25 +25,11 @@ public class Livro {
             }
         }
     }
-    public void devolverLivro(Pessoa pessoaLogado){
+    public void devolverLivro(){
         if(this.disponivel == false){
             System.out.printf("\nLivro devolvido!");
             disponivel = true;
-        } else {
-            System.out.printf("\nLivro errado!");
         }
     }
 
-    public void mostrarLivro(){
-        System.out.printf("\nLivro: " + livro);
-        System.out.printf("\nAutor: " + autor);
-    }
-
-    public String getLivro() {
-        return livro;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
 }

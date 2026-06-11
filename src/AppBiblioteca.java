@@ -22,9 +22,9 @@ public class AppBiblioteca {
                 case 1:
                     Pessoa pessoaLogada = biblioteca.Login();
                     if (pessoaLogada != null) {
-                        System.out.println("Login realizado!");
+                        System.out.println("\nLogin realizado!");
                         if (pessoaLogada instanceof Aluno) {
-                            System.out.println("Entrou como Aluno\n");
+                            System.out.println("\nEntrou como Aluno\n");
                             int i = 10;
                             while (i !=4) {
                                 System.out.printf("\n[1] Consultar livro!");
@@ -38,19 +38,51 @@ public class AppBiblioteca {
                                         biblioteca.consultarLivro();
                                         break;
                                     case 2:
-                                        System.out.printf("\nConsultar Emprestar Livro");
+                                        System.out.printf("\nEmprestar Livro");
+                                        biblioteca.emprestarLivro(pessoaLogada);
                                         break;
                                     case 3:
-                                        System.out.printf("\nConsultar Devolver Livro");
+                                        System.out.printf("\nDevolver Livro");
+                                        biblioteca.devolverLivro(pessoaLogada);
                                         break;
                                     case 4:
                                         System.out.printf("\nSair\n");
+                                        pessoaLogada = null;
+                                        i = 4;
                                 }
                             }
-                            // menuAluno();
                         } else if (pessoaLogada instanceof Bibliotecaria) {
                             System.out.println("Entrou como Bibliotecária");
-                            // menuBibliotecaria();
+                            int i = 10;
+                            while (i !=4) {
+                                System.out.printf("\n[1] Cadastrar Livro");
+                                System.out.printf("\n[2] Remover Livro");
+                                System.out.printf("\n[3] Remover Conta");
+                                System.out.printf("\n[4] Criar conta Aluno");
+                                System.out.printf("\n[5] Sair\n");
+                                i = input.nextInt();
+                                switch (i) {
+                                    case 1:
+                                        System.out.printf("\nCadastrar Livro");
+                                        biblioteca.cadastrarLivro();
+                                        break;
+                                    case 2:
+                                        System.out.printf("\nRemover Livro:");
+                                        biblioteca.removerLivro();
+                                        break;
+                                    case 3:
+                                        System.out.printf("\nRemover Conta:");
+                                        biblioteca.removerConta();
+                                        break;
+                                    case 4:
+                                        System.out.printf("\nCriar conta Aluno:");
+                                        biblioteca.criarContaAluno();
+                                        break;
+                                    case 5:
+                                        System.out.printf("\nSair\n");
+                                        i = 4;
+                                }
+                            }
                         }
                     } else {
                         System.out.println("Login ou senha incorretos!");
