@@ -3,7 +3,6 @@ import Biblioteca.Livro;
 import Usuarios.Bibliotecaria;
 import Usuarios.Conta;
 import Usuarios.Pessoa;
-import Biblioteca.EmprestarLivro;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,7 +14,6 @@ public class Biblioteca {
     ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     ArrayList<Livro> livros = new ArrayList<Livro>();
     ArrayList<Bibliotecaria> bibliotecarias = new ArrayList<Bibliotecaria>();
-    EmprestarLivro emprestar = new EmprestarLivro();
 
     public void criarContaAluno(){
         Aluno aluno = new Aluno();
@@ -38,7 +36,7 @@ public class Biblioteca {
         System.out.printf("\nInforme a Matricula do Aluno: ");
         String matricula = ler.next();
         for (Aluno aluno : alunos){
-            if (aluno.getMatricula() ==  matricula){
+            if (aluno.getMatricula().equals(matricula)){
             alunos.remove(aluno);
             }
         }

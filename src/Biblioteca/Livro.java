@@ -46,6 +46,10 @@ public class Livro {
         }
     }
     public void devolverLivro(Pessoa pessoaLogado){
+        if (quemEmprestou == null) {
+            System.out.printf("\nLivro não esta com ninguem!");
+
+        }
         if(disponivel == false && quemEmprestou.getConta().getLogin().equals(pessoaLogado.getConta().getLogin())){
             System.out.printf("\nLivro devolvido!");
             disponivel = true;

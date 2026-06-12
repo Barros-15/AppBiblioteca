@@ -50,13 +50,12 @@ public class AppBiblioteca {
                                         pessoaLogada = null;
                                         i = 4;
                                 }
-                                pessoaLogada = null;
                             }
                         }
                         else if (pessoaLogada instanceof Bibliotecaria) {
                             System.out.println("Entrou como Bibliotecária");
                             int i = 10;
-                            while (i !=4) {
+                            while (i !=5) {
                                 System.out.printf("\n[1] Cadastrar Livro");
                                 System.out.printf("\n[2] Remover Livro");
                                 System.out.printf("\n[3] Remover Conta");
@@ -82,14 +81,13 @@ public class AppBiblioteca {
                                         break;
                                     case 5:
                                         System.out.printf("\nSair\n");
-                                        i = 4;
+                                        i = 5;
                                 }
                             }
                         }
                     } else {
                         System.out.println("Login ou senha incorretos!");
                     }
-
 
                     break;
 
