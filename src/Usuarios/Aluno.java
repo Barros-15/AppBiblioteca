@@ -9,8 +9,8 @@ public class Aluno  extends Pessoa{
    public void cadastrarAluno(){
        Scanner ler = new Scanner(System.in);
        cadastroPessoa();
-       System.out.printf("\nMatricula: ");
-       matricula = ler.next();
+       //System.out.printf("\nMatricula: ");
+       //matricula = ler.next();
    }
 
     @Override

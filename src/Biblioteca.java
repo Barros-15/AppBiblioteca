@@ -67,7 +67,7 @@ public class Biblioteca {
         System.out.printf("\nQual o livro deseja emprestar? ");
         String opcao = ler.next();
         for(Livro livro : livros) {
-            if (livro.getLivro().equals(opcao)) {
+            if (livro.getLivro().equals(opcao) ) {
                 livro.emprestarLivro(pessoaLogado);
                 return;
             }

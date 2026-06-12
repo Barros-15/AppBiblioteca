@@ -1,5 +1,6 @@
 package Biblioteca;
 
+import Usuarios.Conta;
 import Usuarios.Pessoa;
 
 import java.util.Scanner;
@@ -10,6 +11,7 @@ public class Livro {
     private String autor;
     private boolean disponivel;
     private String opcao;
+    private Pessoa quemEmprestou;
 
 
 
@@ -28,12 +30,14 @@ public class Livro {
             System.out.printf("\nDeseja emprestar ? ");
             opcao = ler.next();
             if(opcao.equals("Sim") || opcao.equals("sim") || opcao.equals("s") || opcao.equals("S")){
-                disponivel =! true;
+                  quemEmprestou = pessoaLogado;
+                disponivel = false;
                 System.out.printf("\nLivro emprestado!");
+                return;
             }
         }
         if(this.disponivel == false){
-            System.out.printf("\nLivro emprestado!");
+            System.out.printf("\nLivro já esta emprestado!");
         }
         if(this.disponivel == true){
             if(opcao.equals("Não") || opcao.equals("não") || opcao.equals("n") || opcao.equals("N")){
@@ -42,12 +46,14 @@ public class Livro {
         }
     }
     public void devolverLivro(Pessoa pessoaLogado){
-        if(this.disponivel == false){
+        if(disponivel == false && quemEmprestou.getConta().getLogin().equals(pessoaLogado.getConta().getLogin())){
             System.out.printf("\nLivro devolvido!");
             disponivel = true;
+            quemEmprestou = null;
         } else {
             System.out.printf("\nLivro errado!");
         }
+
     }
 
     public void mostrarLivro(){

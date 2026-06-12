@@ -50,8 +50,10 @@ public class AppBiblioteca {
                                         pessoaLogada = null;
                                         i = 4;
                                 }
+                                pessoaLogada = null;
                             }
-                        } else if (pessoaLogada instanceof Bibliotecaria) {
+                        }
+                        else if (pessoaLogada instanceof Bibliotecaria) {
                             System.out.println("Entrou como Bibliotecária");
                             int i = 10;
                             while (i !=4) {

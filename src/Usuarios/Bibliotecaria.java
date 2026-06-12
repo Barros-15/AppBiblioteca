@@ -9,8 +9,8 @@ public class Bibliotecaria extends Pessoa{
     public void contaBibliotecaria(){
         Scanner leitor = new Scanner(System.in);
         cadastroPessoa();
-        System.out.printf("\nDigite o matricula: ");
-        matriculaAcesso = leitor.next();
+        //System.out.printf("\nDigite o matricula: ");
+        //matriculaAcesso = leitor.next();
     }
 
     @Override
